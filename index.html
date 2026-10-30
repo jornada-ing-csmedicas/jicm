@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Primera Jornada de Ingeniería y Ciencias Médicas · Usach</title>
+<meta name="description" content="Primera Jornada de Ingeniería y Ciencias Médicas. Martes 15 de diciembre de 2026, Auditorio de Ingeniería Industrial, Universidad de Santiago de Chile. Convocatoria a pósters abierta hasta el 30 de noviembre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#f5821f;
+    --orange-dark:#d96a0b;
+    --navy:#0e3a5c;
+    --teal:#2a7f8e;
+    --teal-soft:#e3f0f2;
+    --ink:#16263a;
+    --muted:#566577;
+    --bg:#f6f9fb;
+    --card:#ffffff;
+    --line:#dde6ec;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Navegación */
+  nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  nav .brand{font-weight:800;font-size:1.05rem;text-decoration:none;color:var(--navy);letter-spacing:.02em}
+  nav .brand span{color:var(--orange)}
+  nav ul{list-style:none;display:flex;gap:22px;font-size:.88rem;font-weight:500}
+  nav ul a{text-decoration:none;color:var(--muted)}
+  nav ul a:hover{color:var(--navy)}
+  nav .nav-cta{background:var(--orange);color:#fff;padding:7px 16px;border-radius:6px;font-weight:600}
+  nav .nav-cta:hover{color:#fff;background:var(--orange-dark)}
+  @media(max-width:860px){nav ul li:not(:last-child){display:none}}
+
+  /* Portada */
+  header.hero{position:relative;overflow:hidden;padding:84px 0 0;
+    background:radial-gradient(circle at 85% 20%,#ffffff 0,#eef4f8 40%,#e4edf3 100%)}
+  header.hero::before{content:"";position:absolute;right:-120px;top:-60px;width:560px;height:560px;border-radius:50%;
+    background:repeating-conic-gradient(from 0deg,rgba(42,127,142,.10) 0deg 1deg,transparent 1deg 6deg);pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .faculties{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:26px}
+  .faculties i{width:2px;height:22px;background:var(--orange);display:inline-block}
+  .hero h1{font-weight:800;font-size:clamp(2.1rem,5.4vw,3.7rem);line-height:1.06;color:var(--teal);max-width:15ch;text-transform:uppercase;letter-spacing:-.01em}
+  .hero .tagline{margin:22px 0 30px;font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:700;color:var(--orange);max-width:30ch;line-height:1.3}
+  .hero .tagline small{display:block;font-weight:500;font-size:.8em;margin-top:4px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:6px;font-weight:700;text-decoration:none;transition:transform .15s,background .15s;font-size:.95rem}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-orange{background:var(--orange);color:#fff}
+  .btn-orange:hover{background:var(--orange-dark)}
+  .btn-outline{border:2px solid var(--navy);color:var(--navy);margin-left:10px}
+  @media(max-width:520px){.btn-outline{margin:10px 0 0}}
+  .datebar{margin-top:64px;background:var(--navy);color:#fff}
+  .datebar .wrap{display:flex;flex-wrap:wrap;gap:10px 40px;padding-top:22px;padding-bottom:22px;align-items:center}
+  .datebar strong{font-size:1.15rem;font-weight:800;letter-spacing:.02em}
+  .datebar span{opacity:.9}
+  .datebar .deadline{margin-left:auto;background:var(--orange);padding:6px 14px;border-radius:4px;font-weight:600;font-size:.9rem}
+  @media(max-width:720px){.datebar .deadline{margin-left:0}}
+
+  section{padding:76px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:#fff}
+  .kicker{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+  h2{font-weight:800;font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:16px;color:var(--navy);line-height:1.2}
+  h3{color:var(--navy)}
+  .lead{font-size:1.08rem;color:var(--muted);max-width:70ch}
+
+  /* Programa */
+  .blocks{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:34px}
+  @media(max-width:860px){.blocks{grid-template-columns:1fr}}
+  .block h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;color:var(--teal);margin-bottom:10px}
+  .item{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:15px 0;border-top:1px solid var(--line)}
+  .item time{font-weight:700;font-variant-numeric:tabular-nums;color:var(--orange)}
+  .item strong{display:block;font-weight:600}
+  .item .sub{color:var(--muted);font-size:.9rem}
+  .item ul{list-style:none;margin-top:6px;font-size:.9rem;color:var(--muted)}
+  .item ul li{padding:2px 0 2px 14px;position:relative}
+  .item ul li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:2px;background:var(--teal)}
+  .item.break strong{color:var(--muted);font-weight:500}
+  .tag{display:inline-block;font-size:.7rem;font-weight:600;padding:1px 7px;border-radius:3px;background:var(--teal-soft);color:var(--teal);margin-left:4px;vertical-align:1px}
+  .note{margin-top:20px;font-size:.85rem;color:var(--muted)}
+
+  /* Panel */
+  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;margin-top:32px}
+  .person{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--teal)}
+  .person.mod{border-top-color:var(--orange)}
+  .person .role{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
+  .person strong{display:block;font-size:1.05rem;color:var(--navy)}
+  .person span{color:var(--muted);font-size:.9rem;display:block;margin-top:4px}
+  .person .role .tag{display:inline-block;margin:0 0 0 4px;font-size:.66rem;color:var(--orange-dark);background:#fff1e4}
+  @media(max-width:600px){.faculties{flex-direction:column;align-items:flex-start;gap:4px}.faculties i{display:none}}
+
+  /* Pósters */
+  .poster-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;margin-top:34px}
+  @media(max-width:860px){.poster-grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px}
+  .card h3{font-size:1.02rem;margin-bottom:12px}
+  .card + .card{margin-top:20px}
+  .ejes{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .ejes li{padding:10px 14px;background:var(--teal-soft);border-radius:6px;font-weight:500;font-size:.95rem}
+  .ejes li.trans{background:#fff1e4;color:var(--orange-dark)}
+  .ejes li.trans small{font-weight:600}
+  .checks{list-style:none;font-size:.94rem;color:var(--ink)}
+  .checks li{padding:6px 0 6px 24px;position:relative;border-top:1px solid var(--line)}
+  .checks li:first-child{border-top:none}
+  .checks li::before{content:"✓";position:absolute;left:2px;color:var(--teal);font-weight:700}
+  .timeline{list-style:none;position:relative;padding-left:22px}
+  .timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .timeline li{position:relative;padding:8px 0}
+  .timeline li::before{content:"";position:absolute;left:-22px;top:15px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--teal)}
+  .timeline li.hl::before{background:var(--orange);border-color:var(--orange)}
+  .timeline b{display:block;font-size:.95rem;color:var(--navy)}
+  .timeline span{font-size:.9rem;color:var(--muted)}
+  .criteria{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .criteria div{border-left:3px solid var(--orange);padding:4px 0 4px 12px;font-size:.9rem;color:var(--muted)}
+  .criteria b{display:block;color:var(--navy);font-size:.95rem}
+  .poster-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;background:var(--navy);color:#fff;border-radius:10px;padding:26px 28px}
+  .poster-cta p{flex:1;min-width:240px}
+  .poster-cta p b{font-size:1.1rem}
+
+  /* Lugar */
+  .two{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+  .map{width:100%;aspect-ratio:4/3;border:0;border-radius:10px}
+  .facts{list-style:none;margin-top:18px}
+  .facts li{padding:11px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:100px 1fr;gap:10px}
+  .facts b{color:var(--navy)}
+  .link{color:var(--teal);font-weight:600}
+
+  footer{background:var(--navy);color:#cfdbe5;padding:40px 0;font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+  footer a{color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">JICM<span>·</span>USACH</a>
+    <ul>
+      <li><a href="#jornada">La jornada</a></li>
+      <li><a href="#programa">Programa</a></li>
+      <li><a href="#panel">Panel</a></li>
+      <li><a href="#posters">Pósters</a></li>
+      <li><a href="#lugar">Lugar</a></li>
+      <li><a class="nav-cta" href="#posters">Postula tu póster</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="faculties">Universidad de Santiago de Chile <i></i> Facultad de Ingeniería <i></i> Facultad de Ciencias Médicas</div>
+    <h1>Primera Jornada de Ingeniería y Ciencias Médicas</h1>
+    <p class="tagline">¿Tu investigación une ingeniería y salud?<small>Queremos conocerla.</small></p>
+    <a class="btn btn-orange" href="#posters">Convocatoria a pósters</a>
+    <a class="btn btn-outline" href="#programa">Ver programa</a>
+  </div>
+  <div class="datebar">
+    <div class="wrap">
+      <strong>MARTES 15 DE DICIEMBRE 2026</strong>
+      <span>Auditorio de Ingeniería Industrial, Usach</span>
+      <span class="deadline">Resúmenes hasta el lunes 30 de noviembre</span>
+    </div>
+  </div>
+</header>
+
+<section id="jornada" class="alt">
+  <div class="wrap">
+    <p class="kicker">La jornada</p>
+    <h2>Ingeniería y ciencias médicas, juntas por una salud con más equidad y acceso</h2>
+    <p class="lead">
+      Organizada por la Facultad de Ingeniería y la Facultad de Ciencias Médicas de la Universidad de Santiago de Chile,
+      la Jornada reúne a ambas comunidades para compartir investigación y conversar sobre cómo la ingeniería
+      y las ciencias médicas pueden sumar esfuerzos para cerrar brechas en salud. Habrá presentaciones de ambas
+      facultades, un panel con actores del sistema de salud, mesas temáticas de trabajo y una sesión de pósters
+      abierta a todas las personas asistentes.
+    </p>
+  </div>
+</section>
+
+<section id="programa">
+  <div class="wrap">
+    <p class="kicker">Programa preliminar</p>
+    <h2>Martes 15 de diciembre</h2>
+    <div class="blocks">
+      <div class="block">
+        <h3>Mañana</h3>
+        <div class="item break"><time>08:30</time><div><strong>Acreditación</strong></div></div>
+        <div class="item"><time>09:00</time><div>
+          <strong>Bienvenida</strong>
+          <span class="sub">Erick Saavedra, Vicedecano de Investigación, Facultad de Ingeniería · David Arriagada, Vicedecano de Investigación, Facultad de Ciencias Médicas</span>
+        </div></div>
+        <div class="item"><time>09:30</time><div>
+          <strong>Panorama de investigación: Facultad de Ciencias Médicas</strong>
+          <ul><li>Expositores por confirmar</li></ul>
+        </div></div>
+        <div class="item break"><time>10:30</time><div><strong>Café y pósters</strong></div></div>
+        <div class="item"><time>11:00</time><div>
+          <strong>Panel: Salud sin brechas, desafíos para la ingeniería</strong>
+          <span class="sub"><a class="link" href="#panel">Ver panelistas ↓</a></span>
+        </div></div>
+        <div class="item"><time>12:00</time><div>
+          <strong>Panorama de investigación: Facultad de Ingeniería</strong>
+          <ul>
+            <li>Mario Inostroza, Depto. de Ingeniería Informática</li>
+            <li>Aldo Abarca, Depto. de Ingeniería Mecánica</li>
+            <li>Cristian Morales, Depto. de Ingeniería Multidisciplinaria</li>
+          </ul>
+        </div></div>
+        <div class="item break"><time>13:00</time><div><strong>Almuerzo</strong></div></div>
+      </div>
+      <div class="block">
+        <h3>Tarde</h3>
+        <div class="item"><time>14:00</time><div>
+          <strong>Mesas temáticas de trabajo</strong>
+          <span class="sub">Mesas mixtas entre ambas facultades. Facilita: Dinem</span>
+        </div></div>
+        <div class="item"><time>16:00</time><div><strong>Plenario: síntesis de cada mesa</strong></div></div>
+        <div class="item break"><time>16:20</time><div><strong>Café</strong></div></div>
+        <div class="item"><time>16:30</time><div>
+          <strong>Presentación de pósters y networking</strong>
+          <span class="sub"><a class="link" href="#posters">Postula tu trabajo ↓</a></span>
+        </div></div>
+        <div class="item"><time>17:30</time><div><strong>Cierre</strong></div></div>
+      </div>
+    </div>
+    <p class="note">Programa preliminar, sujeto a cambios.</p>
+  </div>
+</section>
+
+<section id="panel" class="alt">
+  <div class="wrap">
+    <p class="kicker">Panel · 11:00</p>
+    <h2>Salud sin brechas: desafíos para la ingeniería</h2>
+    <p class="lead">Una conversación con la industria, la academia y el sistema público de salud sobre los desafíos de equidad y acceso donde la ingeniería puede marcar la diferencia.</p>
+    <div class="people">
+      <div class="person"><p class="role">Panelista</p><strong>Gabriela Garnham</strong><span>Asociación Gremial de Dispositivos Médicos de Chile (Adimech)</span></div>
+      <div class="person"><p class="role">Panelista</p><strong>Báltica Cabieses</strong><span>Universidad del Desarrollo y Hong Kong University</span></div>
+      <div class="person"><p class="role">Panelista <span class="tag">por confirmar</span></p><strong>Constanza Ovalle</strong><span>Complejo Hospitalario San José</span></div>
+      <div class="person"><p class="role">Panelista <span class="tag">por confirmar</span></p><strong>Marcela Aguilera</strong><span>Servicio de Salud Metropolitano Centro</span></div>
+      <div class="person mod"><p class="role">Modera</p><strong>Patricio Vásquez</strong><span>Escuela de Medicina, Universidad de Santiago de Chile</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="posters">
+  <div class="wrap">
+    <p class="kicker">Convocatoria abierta</p>
+    <h2>Convocatoria a pósters</h2>
+    <p class="lead">
+      Invitamos a estudiantes de pre y postgrado, investigadoras, investigadores y académicos de las facultades de
+      Ingeniería y de Ciencias Médicas de la Usach, y de otras instituciones, a presentar trabajos que vinculen
+      ingeniería y salud. Se aceptan trabajos concluidos o en desarrollo: proyectos de investigación, memorias, tesis,
+      innovaciones, prototipos y propuestas. <strong>Se valoran especialmente los trabajos con autores de ambas facultades.</strong>
+    </p>
+
+    <div class="poster-grid">
+      <div>
+        <div class="card">
+          <h3>Ejes temáticos</h3>
+          <ul class="ejes">
+            <li>Dispositivos y tecnologías biomédicas</li>
+            <li>Datos, inteligencia artificial y salud digital</li>
+            <li>Gestión hospitalaria y sistemas de salud</li>
+            <li class="trans">Equidad y acceso a la salud <small>· eje transversal</small></li>
+            <li>Otros temas en la intersección entre ingeniería y salud</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Resumen</h3>
+          <ul class="checks">
+            <li>Máximo 300 palabras, en español (sin contar título, autores ni palabras clave)</li>
+            <li>Estructura sugerida: contexto y objetivo, metodología, resultados o avances, y conclusiones y relevancia</li>
+            <li>Entre 3 y 5 palabras clave</li>
+            <li>Al final, indicar la relevancia del trabajo para la relación entre ingeniería y salud</li>
+            <li>Cada postulación tiene un autor/a responsable que presenta el póster; estudiantes deben indicar profesor/a guía</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Evaluación</h3>
+          <p class="sub" style="color:var(--muted);font-size:.92rem;margin-bottom:14px">Un comité con integrantes de ambas facultades evaluará cada resumen de 1 a 5 en cuatro criterios:</p>
+          <div class="criteria">
+            <div><b>Pertinencia</b>Vínculo con ingeniería y salud</div>
+            <div><b>Claridad</b>Comprensible para personas de otra disciplina</div>
+            <div><b>Rigor</b>Coherencia entre objetivo, metodología y resultados</div>
+            <div><b>Aporte</b>Novedad o impacto, incluida la contribución a la equidad y el acceso</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Fechas importantes</h3>
+          <ul class="timeline">
+            <li><b>Viernes 30 de octubre</b><span>Apertura de la convocatoria</span></li>
+            <li class="hl"><b>Lunes 30 de noviembre, 23:59 hrs</b><span>Cierre de recepción de resúmenes</span></li>
+            <li><b>1 al 4 de diciembre</b><span>Evaluación</span></li>
+            <li><b>Lunes 7 de diciembre</b><span>Comunicación de resultados</span></li>
+            <li><b>Viernes 11 de diciembre</b><span>Plazo para enviar el póster final</span></li>
+            <li class="hl"><b>Martes 15 de diciembre</b><span>Sesión de pósters, Auditorio de Ingeniería Industrial</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>El póster</h3>
+          <ul class="checks">
+            <li>Orientación vertical; dimensiones por confirmar</li>
+            <li>Plantilla se entrega junto con los resultados</li>
+            <li>Impresión a cargo de cada autor/a</li>
+            <li>Al menos un autor/a debe presentar durante la sesión</li>
+            <li>Certificado de participación para quienes presenten</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Autorizaciones</h3>
+          <p style="color:var(--muted);font-size:.9rem">Los autores conservan la propiedad intelectual de sus trabajos. Al postular, autorizan la difusión del título, autores y resumen en los materiales del evento, y el registro fotográfico de la sesión de pósters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-cta">
+      <p><b>Postula antes del lunes 30 de noviembre</b><br>Las postulaciones se reciben solo a través del formulario en línea. Recibirás una copia de tus respuestas como comprobante.</p>
+      <a class="btn btn-orange" href="https://forms.gle/R5i2Q4PycWHBi9if8" target="_blank" rel="noopener">Ir al formulario</a>
+    </div>
+  </div>
+</section>
+
+<section id="lugar" class="alt">
+  <div class="wrap two">
+    <div>
+      <p class="kicker">Cómo llegar</p>
+      <h2>Lugar</h2>
+      <ul class="facts">
+        <li><b>Auditorio</b><span>Departamento de Ingeniería Industrial, Universidad de Santiago de Chile</span></li>
+        <li><b>Dirección</b><span>Av. Víctor Jara 3769, Estación Central</span></li>
+        <li><b>Metro</b><span>Estación Universidad de Santiago (Línea 1)</span></li>
+        <li><b>Fecha</b><span>Martes 15 de diciembre de 2026, desde las 08:30</span></li>
+      </ul>
+      <p style="margin-top:18px"><a class="link" href="https://www.google.com/maps/search/?api=1&query=Av.+V%C3%ADctor+Jara+3769%2C+Estaci%C3%B3n+Central%2C+Santiago" target="_blank" rel="noopener">Abrir en Google Maps →</a></p>
+    </div>
+    <iframe class="map" loading="lazy" title="Mapa del campus Usach"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-70.6930%2C-33.4545%2C-70.6760%2C-33.4435&amp;layer=mapnik&amp;marker=-33.4495%2C-70.6835"></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Organizan: Facultad de Ingeniería y Facultad de Ciencias Médicas, Universidad de Santiago de Chile</div>
+    <div>Consultas: <a href="mailto:jicm@usach.cl">jicm@usach.cl</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
