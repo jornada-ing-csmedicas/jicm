@@ -155,6 +155,19 @@
   .logos img{height:96px;width:auto}
   .logos .fac small{font-size:.95rem}.logos .fac b{font-size:1.35rem}
 
+  /* Inscripción */
+  .reg{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-top:10px}
+  @media(max-width:860px){.reg{grid-template-columns:1fr}}
+  .steps{list-style:none;counter-reset:st;margin-top:22px}
+  .steps li{counter-increment:st;position:relative;padding:10px 0 10px 46px;border-top:1px solid var(--line);color:var(--muted)}
+  .steps li:first-child{border-top:none}
+  .steps li::before{content:counter(st);position:absolute;left:0;top:9px;width:30px;height:30px;border-radius:50%;
+    background:var(--teal);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .steps b{color:var(--navy)}
+  .reg-box{background:var(--navy);color:#fff;border-radius:12px;padding:32px;text-align:center}
+  .reg-box .big{font-size:1.3rem;font-weight:800;margin-bottom:8px}
+  .reg-box p{color:#cfdbe5;font-size:.95rem;margin-bottom:22px}
+
   footer{background:var(--navy);color:#cfdbe5;padding:40px 0;font-size:.9rem}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
   footer a{color:#fff;font-weight:600}
@@ -172,7 +185,8 @@
       <li><a href="#posters">Pósters</a></li>
       <li><a href="#organizacion">Organización</a></li>
       <li><a href="#lugar">Lugar</a></li>
-      <li><a class="nav-cta" href="#posters">Postula tu póster</a></li>
+      <li><a href="#inscripcion">Inscripción</a></li>
+      <li><a class="nav-cta" href="#inscripcion">Inscríbete</a></li>
     </ul>
   </div>
 </nav>
@@ -188,8 +202,8 @@
     </div>
     <h1>Primera Jornada de Ingeniería y Ciencias Médicas</h1>
     <p class="tagline">¿Tu investigación une ingeniería y salud?<small>Queremos conocerla.</small></p>
-    <a class="btn btn-orange" href="#posters">Convocatoria a pósters</a>
-    <a class="btn btn-outline" href="#programa">Ver programa</a>
+    <a class="btn btn-orange" href="#inscripcion">Inscríbete</a>
+    <a class="btn btn-outline" href="#posters">Convocatoria a pósters</a>
   </div>
   <div class="datebar">
     <div class="wrap">
@@ -360,7 +374,32 @@
   </div>
 </section>
 
-<section id="organizacion" class="alt">
+<section id="inscripcion" class="alt">
+  <div class="wrap">
+    <p class="kicker">Inscripción</p>
+    <h2>Inscríbete en la Jornada</h2>
+    <div class="reg">
+      <div>
+        <p class="lead">La participación es gratuita y los cupos son limitados, especialmente en las mesas de trabajo de la tarde.
+        Para asegurar una conversación equilibrada entre ambas facultades y el sistema de salud, la inscripción es una
+        <strong>preinscripción</strong>: la organización confirmará los cupos por correo.</p>
+        <ol class="steps">
+          <li><b>Completa el formulario</b> de inscripción.</li>
+          <li><b>Recibe la confirmación</b> de tu cupo por correo antes del <b>miércoles 9 de diciembre</b>.</li>
+          <li><b>Asiste</b> el martes 15 de diciembre desde las 08:30.</li>
+        </ol>
+        <p class="note">Si presentas un póster, inscríbete igualmente: el envío del resumen no reemplaza la inscripción.</p>
+      </div>
+      <div class="reg-box">
+        <p class="big">Inscripciones hasta el lunes 7 de diciembre</p>
+        <p>Formulario en línea · toma 3 minutos</p>
+        <a class="btn btn-orange" href="https://forms.gle/INSCRIPCION-REEMPLAZAR" target="_blank" rel="noopener">Ir al formulario de inscripción</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="organizacion">
   <div class="wrap">
     <p class="kicker">Organización</p>
     <h2>Comité organizador</h2>
@@ -399,7 +438,7 @@
   </div>
 </section>
 
-<section id="lugar">
+<section id="lugar" class="alt">
   <div class="wrap two">
     <div>
       <p class="kicker">Cómo llegar</p>
