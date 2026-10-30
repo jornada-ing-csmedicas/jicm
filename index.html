@@ -7,7 +7,7 @@
 <meta name="description" content="Primera Jornada de Ingeniería y Ciencias Médicas. Martes 15 de diciembre de 2026, Auditorio de Ingeniería Industrial, Universidad de Santiago de Chile. Convocatoria a pósters abierta hasta el 30 de noviembre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --orange:#f5821f;
@@ -132,6 +132,29 @@
   .facts b{color:var(--navy)}
   .link{color:var(--teal);font-weight:600}
 
+  /* Logos */
+  .lockup{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:30px}
+  .lockup img.usach{height:74px;width:auto}
+  .lockup .sep{width:2px;height:58px;background:var(--orange)}
+  .fac{font-family:Oswald,sans-serif;color:var(--teal);text-transform:uppercase;line-height:1.02}
+  .fac small{display:block;font-weight:300;font-size:1.05rem;letter-spacing:.01em}
+  .fac b{display:block;font-weight:500;font-size:1.55rem;letter-spacing:.01em}
+  @media(max-width:600px){.lockup img.usach{height:58px}.lockup .sep{height:44px}.fac small{font-size:.85rem}.fac b{font-size:1.2rem}}
+
+  /* Organización */
+  .org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px;margin-top:34px}
+  .org{text-align:center}
+  .photo{position:relative;width:132px;height:132px;border-radius:50%;margin:0 auto 14px;overflow:hidden;
+    background:linear-gradient(135deg,var(--teal),var(--navy));border:4px solid #fff;box-shadow:0 0 0 2px var(--orange)}
+  .photo::before{content:attr(data-initials);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:700;font-size:2.1rem;letter-spacing:.04em}
+  .photo img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+  .org strong{display:block;color:var(--navy);font-size:1.02rem}
+  .org span{display:block;color:var(--muted);font-size:.86rem;line-height:1.4;margin-top:2px}
+  .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 44px;margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
+  .logos img{height:96px;width:auto}
+  .logos .fac small{font-size:.95rem}.logos .fac b{font-size:1.35rem}
+
   footer{background:var(--navy);color:#cfdbe5;padding:40px 0;font-size:.9rem}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
   footer a{color:#fff;font-weight:600}
@@ -147,6 +170,7 @@
       <li><a href="#programa">Programa</a></li>
       <li><a href="#panel">Panel</a></li>
       <li><a href="#posters">Pósters</a></li>
+      <li><a href="#organizacion">Organización</a></li>
       <li><a href="#lugar">Lugar</a></li>
       <li><a class="nav-cta" href="#posters">Postula tu póster</a></li>
     </ul>
@@ -155,7 +179,13 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="faculties">Universidad de Santiago de Chile <i></i> Facultad de Ingeniería <i></i> Facultad de Ciencias Médicas</div>
+    <div class="lockup">
+      <img class="usach" src="img/usach.png" alt="Universidad de Santiago de Chile">
+      <span class="sep"></span>
+      <div class="fac"><small>Facultad de</small><b>Ingeniería</b></div>
+      <span class="sep"></span>
+      <div class="fac"><small>Facultad de</small><b>Ciencias Médicas</b></div>
+    </div>
     <h1>Primera Jornada de Ingeniería y Ciencias Médicas</h1>
     <p class="tagline">¿Tu investigación une ingeniería y salud?<small>Queremos conocerla.</small></p>
     <a class="btn btn-orange" href="#posters">Convocatoria a pósters</a>
@@ -330,7 +360,42 @@
   </div>
 </section>
 
-<section id="lugar" class="alt">
+<section id="organizacion" class="alt">
+  <div class="wrap">
+    <p class="kicker">Organización</p>
+    <h2>Comité organizador</h2>
+    <div class="org-grid">
+      <div class="org">
+        <div class="photo" data-initials="LM"><img src="img/organizadores/leo-medina.jpg" alt="Leo Medina" onerror="this.remove()"></div>
+        <strong>Leo Medina</strong><span>Ingeniería Civil Biomédica</span>
+      </div>
+      <div class="org">
+        <div class="photo" data-initials="GR"><img src="img/organizadores/georgina-renard.jpg" alt="Georgina Renard" onerror="this.remove()"></div>
+        <strong>Georgina Renard</strong><span>CIBAP, Facultad de Ciencias Médicas</span>
+      </div>
+      <div class="org">
+        <div class="photo" data-initials="DT"><img src="img/organizadores/diego-torres.jpg" alt="Diego Torres" onerror="this.remove()"></div>
+        <strong>Diego Torres</strong><span>Ingeniería Civil Biomédica</span>
+      </div>
+      <div class="org">
+        <div class="photo" data-initials="LM"><img src="img/organizadores/luis-milla.jpg" alt="Luis Milla" onerror="this.remove()"></div>
+        <strong>Luis Milla</strong><span>CIBAP, Facultad de Ciencias Médicas</span>
+      </div>
+      <div class="org">
+        <div class="photo" data-initials="BG"><img src="img/organizadores/britam-gomez.jpg" alt="Britam Gómez" onerror="this.remove()"></div>
+        <strong>Britam Gómez</strong><span>Ingeniería Civil Biomédica</span>
+      </div>
+    </div>
+    <div class="logos">
+      <img src="img/usach.png" alt="Universidad de Santiago de Chile">
+      <div class="fac"><small>Facultad de</small><b>Ingeniería</b></div>
+      <div class="fac"><small>Facultad de</small><b>Ciencias Médicas</b></div>
+      <img src="img/biomedica.png" alt="Ingeniería Civil Biomédica Usach">
+    </div>
+  </div>
+</section>
+
+<section id="lugar">
   <div class="wrap two">
     <div>
       <p class="kicker">Cómo llegar</p>
