@@ -86,7 +86,7 @@
   .note{margin-top:20px;font-size:.85rem;color:var(--muted)}
 
   /* Panel */
-  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;margin-top:32px}
+  .people{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:32px}
   .person{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;border-top:4px solid var(--teal)}
   .person.mod{border-top-color:var(--orange)}
   .person .role{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}
@@ -173,6 +173,20 @@
   .support p{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
   .support .fac b{font-size:1.25rem}
 
+  /* Fotos de expositores */
+  .item ul.spk-list{margin-top:8px}
+  .item ul.spk-list li.spk{display:flex;align-items:center;gap:10px;padding:5px 0}
+  .item ul.spk-list li.spk::before{display:none}
+  .spk b{display:block;color:var(--ink);font-weight:600;font-size:.9rem;line-height:1.25}
+  .spk small{display:block;font-size:.82rem;line-height:1.3}
+  .av{position:relative;flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--teal),var(--navy))}
+  .av::before{content:attr(data-initials);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.78rem}
+  .av img{position:relative;width:100%;height:100%;object-fit:cover;display:block}
+  .person .photo.pp{display:block;width:88px;height:88px;margin:0 0 14px;border-width:3px}
+  .person .photo.pp::before{font-size:1.4rem}
+  .person.mod .photo.pp{box-shadow:0 0 0 2px var(--orange)}
+  .person .photo.pp img{margin:0}
+
   footer{background:var(--navy);color:#cfdbe5;padding:40px 0;font-size:.9rem}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
   footer a{color:#fff;font-weight:600}
@@ -243,14 +257,17 @@
         <div class="item break"><time>08:30</time><div><strong>Acreditación</strong></div></div>
         <div class="item"><time>09:00</time><div>
           <strong>Bienvenida</strong>
-          <span class="sub">Erick Saavedra, Vicedecano de Investigación, Facultad de Ingeniería · David Arriagada, Vicedecano de Investigación, Facultad de Ciencias Médicas</span>
+          <ul class="spk-list">
+            <li class="spk"><span class="av" data-initials="ES"><img src="img/personas/erick-saavedra.jpg" alt="" onerror="this.remove()"></span><span><b>Erick Saavedra</b><small>Vicedecano de Investigación, Facultad de Ingeniería</small></span></li>
+            <li class="spk"><span class="av" data-initials="DA"><img src="img/personas/david-arriagada.jpg" alt="" onerror="this.remove()"></span><span><b>David Arriagada</b><small>Vicedecano de Investigación, Facultad de Ciencias Médicas</small></span></li>
+          </ul>
         </div></div>
         <div class="item"><time>09:20</time><div>
           <strong>Panorama de investigación: Facultad de Ciencias Médicas</strong>
-          <ul>
-            <li>David Arriagada, Escuela de Kinesiología</li>
-            <li>Georgina Renard, CIBAP</li>
-            <li>Por confirmar</li>
+          <ul class="spk-list">
+            <li class="spk"><span class="av" data-initials="DA"><img src="img/personas/david-arriagada.jpg" alt="" onerror="this.remove()"></span><span><b>David Arriagada</b><small>Escuela de Kinesiología</small></span></li>
+            <li class="spk"><span class="av" data-initials="GR"><img src="img/organizadores/georgina-renard.jpg" alt="" onerror="this.remove()"></span><span><b>Georgina Renard</b><small>CIBAP</small></span></li>
+            <li class="spk"><span class="av" data-initials="?"></span><span><b>Por confirmar</b></span></li>
           </ul>
         </div></div>
         <div class="item break"><time>10:20</time><div><strong>Café y pósters</strong></div></div>
@@ -260,10 +277,10 @@
         </div></div>
         <div class="item"><time>12:10</time><div>
           <strong>Panorama de investigación: Facultad de Ingeniería</strong>
-          <ul>
-            <li>Mario Inostroza, Depto. de Ingeniería Informática</li>
-            <li>Aldo Abarca, Depto. de Ingeniería Mecánica</li>
-            <li>Cristian Morales, Depto. de Ingeniería Multidisciplinaria</li>
+          <ul class="spk-list">
+            <li class="spk"><span class="av" data-initials="MI"><img src="img/personas/mario-inostroza.jpg" alt="" onerror="this.remove()"></span><span><b>Mario Inostroza</b><small>Depto. de Ingeniería Informática</small></span></li>
+            <li class="spk"><span class="av" data-initials="AA"><img src="img/personas/aldo-abarca.jpg" alt="" onerror="this.remove()"></span><span><b>Aldo Abarca</b><small>Depto. de Ingeniería Mecánica</small></span></li>
+            <li class="spk"><span class="av" data-initials="CM"><img src="img/personas/cristian-morales.jpg" alt="" onerror="this.remove()"></span><span><b>Cristian Morales</b><small>Depto. de Ingeniería Multidisciplinaria</small></span></li>
           </ul>
         </div></div>
         <div class="item break"><time>13:10</time><div><strong>Almuerzo</strong></div></div>
@@ -293,12 +310,12 @@
     <h2>Salud sin brechas: desafíos para la ingeniería</h2>
     <p class="lead">Una conversación con la industria, la academia y el sistema público de salud sobre los desafíos de equidad y acceso donde la ingeniería puede marcar la diferencia.</p>
     <div class="people">
-      <div class="person"><p class="role">Panelista</p><strong>Gabriela Garnham</strong><span>Presidenta, Asociación Gremial de Dispositivos Médicos de Chile (ADIMECH)</span></div>
-      <div class="person"><p class="role">Panelista</p><strong>Báltica Cabieses</strong><span>Directora, Centro de Salud Global Intercultural, Universidad del Desarrollo · Profesora, Universidad de Hong Kong</span></div>
-      <div class="person"><p class="role">Panelista</p><strong>Janepsy Díaz</strong><span>Jefa del Departamento Agencia Nacional de Dispositivos Médicos, Innovación y Desarrollo, Instituto de Salud Pública (ISP)</span></div>
-      <div class="person"><p class="role">Panelista</p><strong>Constanza Ovalle</strong><span>Médica fisiatra, Unidad de Medicina Física y Rehabilitación, Complejo Hospitalario San José</span></div>
-      <div class="person"><p class="role">Panelista</p><strong>Marcela Aguilera</strong><span>Coordinadora de Innovación Red, Servicio de Salud Metropolitano Central</span></div>
-      <div class="person mod"><p class="role">Modera</p><strong>Patricio Vásquez</strong><span>Escuela de Medicina, Universidad de Santiago de Chile</span></div>
+      <div class="person"><span class="photo pp" data-initials="GG"><img src="img/personas/gabriela-garnham.jpg" alt="" onerror="this.remove()"></span><p class="role">Panelista</p><strong>Gabriela Garnham</strong><span>Presidenta, Asociación Gremial de Dispositivos Médicos de Chile (ADIMECH)</span></div>
+      <div class="person"><span class="photo pp" data-initials="BC"><img src="img/personas/baltica-cabieses.jpg" alt="" onerror="this.remove()"></span><p class="role">Panelista</p><strong>Báltica Cabieses</strong><span>Directora, Centro de Salud Global Intercultural, Universidad del Desarrollo · Profesora, Universidad de Hong Kong</span></div>
+      <div class="person"><span class="photo pp" data-initials="JD"><img src="img/personas/janepsy-diaz.jpg" alt="" onerror="this.remove()"></span><p class="role">Panelista</p><strong>Janepsy Díaz</strong><span>Jefa del Departamento Agencia Nacional de Dispositivos Médicos, Innovación y Desarrollo, Instituto de Salud Pública (ISP)</span></div>
+      <div class="person"><span class="photo pp" data-initials="CO"><img src="img/personas/constanza-ovalle.jpg" alt="" onerror="this.remove()"></span><p class="role">Panelista</p><strong>Constanza Ovalle</strong><span>Médica fisiatra, Unidad de Medicina Física y Rehabilitación, Complejo Hospitalario San José</span></div>
+      <div class="person"><span class="photo pp" data-initials="MA"><img src="img/personas/marcela-aguilera.jpg" alt="" onerror="this.remove()"></span><p class="role">Panelista</p><strong>Marcela Aguilera</strong><span>Coordinadora de Innovación Red, Servicio de Salud Metropolitano Central</span></div>
+      <div class="person mod"><span class="photo pp" data-initials="PV"><img src="img/personas/patricio-vasquez.jpg" alt="" onerror="this.remove()"></span><p class="role">Modera</p><strong>Patricio Vásquez</strong><span>Escuela de Medicina, Universidad de Santiago de Chile</span></div>
     </div>
   </div>
 </section>
